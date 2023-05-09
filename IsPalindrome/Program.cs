@@ -37,10 +37,19 @@ namespace IsPalindrome
         public static string IsPalindrome(string text)
         {
             var reversed = "";
+            var newText = "";
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (char.IsLetterOrDigit(text[i]))
+                newText += text[i];
+            }
+            text = newText;
 
             for (int i = text.Length - 1; i >= 0; i--)
             {
-                reversed += text[i];
+                if (char.IsLetterOrDigit(text[i]))
+                    reversed += text[i];
             }
 
             if (reversed.ToLower() == text.ToLower())
