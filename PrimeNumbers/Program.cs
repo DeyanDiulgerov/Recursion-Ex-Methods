@@ -62,15 +62,16 @@ namespace PrimeNumbers
                 return $"The number {number} is NOT a prime number";
             else if (number == 2)
                 return $"The number {number} is a prime number";
-
-            if (number % number == 0 && number / 1 == number && number % 2 == 0)
-            {
-                return $"The number {number} is NOT a prime number";
-            }
             else
             {
+                for (int a = 2; a <= number / 2; a++)
+                {
+                    if (number % a == 0)
+                    {
+                        return $"The number {number} is NOT a prime number";
+                    }
+                }
                 return $"The number {number} is a prime number";
-            }
         }
     }
 }
